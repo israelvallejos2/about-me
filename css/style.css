@@ -1,0 +1,12 @@
+*{
+text-align: center;
+background: tan;
+}
+img{
+    display: inline-block;
+    height: 270px;
+    width: 270px;
+}
+li{
+    color: blue;
+}
