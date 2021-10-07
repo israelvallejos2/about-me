@@ -1,28 +1,18 @@
 'use strict';
 
-// let answerCorrect = true;
-// let alterateCorrect = true;
-// && - the "logical and "
-// || - the "logical or "
-// !  - the "logical "
+let totalCorrect = 0;
 
-// if (answerCorrect || alterateCorrect) {
-//     console.log('your answered correctly!');
-// }
-// else {
-//     console.log('sorry, that\'s incorrect.');
-// }
+let userName = prompt('Please enter your first name.');
 
-let userAnswer1 = prompt("Is the sky blue cause god loves the Infantry? Yes or No?").toUpperCase();
-let userAnswer2 = prompt("Did I join the military right out of highschool? Yes or No?").toUpperCase();
-let userAnswer3 = prompt("Did I join the military right out of highschool? Yes or No?").toUpperCase();
-let userAnswer4 = prompt("Do I have 2 kids? Yes or No?").toLowerCase();
-let userAnswer5 = prompt("Have you traveled around the world? Yes or No?").toLowerCase();
-// let userAnswer6 = prompt("Is your favorite color blue? Yes or No?").toLowerCase();
+alert(userName + ', you will now be asking you some questions now.');
 
-if (userAnswer1 === 'YES'|| 'Y') {
+
+let Military = prompt('Did I join the military right out of highschool? Yes or No?').toLowerCase();
+
+if (Military === 'yes' || Military === 'y') {
     // console.log('your answered correctly!');
     alert('your answered correctly!');
+    totalCorrect = totalCorrect + 1;
 }
 else {
     // console.log('sorry, that\'s incorrect.');
@@ -30,84 +20,115 @@ else {
 }
 
 
+let Kids = prompt('Do I have 2 kids? Yes or No?').toLowerCase();
 
-if (userAnswer2 === 'Yes' || userAnswer2 === 'y') {
+if (Kids === 'yes' || Kids === 'y') {
     // console.log('your answered correctly!');
     alert('your answered correctly!');
+    totalCorrect = totalCorrect + 1;
 }
 else {
     // console.log('sorry, that\'s incorrect.');
     alert('sorry, that\'s incorrect.');
 }
 
-if (userAnswer3 === 'Yes' || userAnswer3 === 'y') {
+
+let Location = prompt('Did I live in Upstate Ny? Yes or No?').toLowerCase();
+
+if (Location === 'yes' || Location === 'y') {
     // console.log('your answered correctly!');
     alert('your answered correctly!');
+    totalCorrect = totalCorrect + 1;
 }
 else {
     // console.log('sorry, that\'s incorrect.');
     alert('sorry, that\'s incorrect.');
 }
 
-if (userAnswer4 === 'Yes' || userAnswer4 === 'y') {
+
+let Job = prompt('Did I lose my Job due to Covid 19? Yes or No?').toLowerCase();
+
+if (Job === 'yes' || Job === 'y') {
     // console.log('your answered correctly!');
     alert('your answered correctly!');
+    totalCorrect = totalCorrect + 1;
 }
 else {
     // console.log('sorry, that\'s incorrect.');
     alert('sorry, that\'s incorrect.');
 }
-if (userAnswer5 === 'Yes' || userAnswer5 === 'y') {
-    // console.log('your answered correctly!');
-    alert('your answered correctly!');
+
+
+let numberGuessed = 0;
+let numberOfGuesses = 6;
+let correctAnswer = Math.floor(Math.random() * 101);
+alert('Let\'s play a guessing game.  You will get four (6) chances to guess a random generated number between 0 and 100.');
+
+
+numberGuessed = prompt('Please enter your guess for the random generated number.');
+
+while (parseInt(numberGuessed) !== correctAnswer && (numberOfGuesses - 1) > 0) {
+    numberOfGuesses--;
+    if (parseInt(numberGuessed) < correctAnswer) {
+        numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is higher.  Please guess again.');
+    }
+    else if (parseInt(numberGuessed) > correctAnswer) {
+        numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is lower.  Please guess again.');
+    }
+    else {
+        numberGuessed = prompt('You have not entered a valid number.  Please guess again.');
+    }
+}
+
+
+
+if (parseInt(numberGuessed) === correctAnswer) {
+    alert('You have guessed the computer generated number!');
+    totalCorrect = totalCorrect + 1;
 }
 else {
-    // console.log('sorry, that\'s incorrect.');
-    alert('sorry, that\'s incorrect.');
+    alert('The computer generated number was ' + correctAnswer);
 }
 
-let attempsRemaining = 6;
-// variable array of answers
-let favColor = ['blue', 'cream', 'rose'];
+const PlacesOfTravel = ['iraq', 'cameroon', 'niger', 'ireland', 'spain', 'germany', 'albenia', 'fort drum', 'georgia', 'mexico'];
+let PlacesGuessed = '';
+let guessesRemaining = 10;
+let answeredCorrectly = 'No';
+let allAnswers = '';
 
 
-//variable to store the user input
-
-while(attempsRemaining) {
-    console.log("I'm inside the while loop");
-    // console.log(attempsReaminin);
-    // alerts the user if they were right 
-    // alers the user how many attemps they have left
-    console.log(`you have ${attempsRemaining -1} attempts remaining`);
-    attempsRemaining--;
+for (let i = 0; i < PlacesOfTravel.length - 1; i++) {
+    allAnswers += PlacesOfTravel[i] + ",  ";
 }
 
-//user is prompted for a guress
 
-// the user input is evaulated
-
-// is that value in my array of ansers?
-
-// does the user have any more attempts to guess
+allAnswers += PlacesOfTravel[PlacesOfTravel.length - 1];
 
 
-
-// let attempsRemaining = 6 
-
-// let favColor = ['blue', 'red', 'green'];
-
-// let userResponse = 'blue';
-
-// for (let i = 0; i < favColor.length; i++) {
-//     if(userResponse === favColor[i]) {
-//         console.log("that's correct");
-//     }
-// }
+alert('Let\'s play a new game.  Try to guess one of my Top 10 places I have been.  You have up to 10 (10) guesses.');
 
 
-// let attempts = 6;
+PlacesGuessed = prompt('Please enter Location that you think are in his top 10.');
 
-// for (let i = 0; i < attempts; i++);{
-//     console.log(i); 
+for (let k = (guessesRemaining - 1); k > 0; k--) {
+    for (let i = 0; i < PlacesOfTravel.length; i++) {
+        if (PlacesGuessed.toLowerCase() === PlacesOfTravel[i]) {
+            alert('You have guessed one of Israel top 10 correctly!');
+            answeredCorrectly = 'yes';
+            totalCorrect = totalCorrect + 1;
+            break;
+        }
+        else {
+            console.log(PlacesGuessed);
+        }
+    }
+    if (answeredCorrectly === 'Yes') {
+        break;
+    }
+    PlacesGuessed = prompt('You have not guessed one of Israel top 10 correctly.  Please try again.');
 
-// }
+
+
+    alert("The possible answers were: " + allAnswers);
+
+    alert("You have scored " + totalCorrect + " out of a possible 6.");
