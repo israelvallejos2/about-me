@@ -49,6 +49,7 @@ function Location(){
         alert('sorry, that\'s incorrect.');
     }
 }
+Location();
 
 let Job = prompt('Did I lose my Job due to Covid 19? Yes or No?').toLowerCase();
 
