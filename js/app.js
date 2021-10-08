@@ -6,19 +6,22 @@ let userName = prompt('Please enter your first name.');
 
 alert(userName + ', you will now be asking you some questions now.');
 
-
-let Military = prompt('Did I join the military right out of highschool? Yes or No?').toLowerCase();
-
-if (Military === 'yes' || Military === 'y') {
-    // console.log('your answered correctly!');
-    alert('your answered correctly!');
-    totalCorrect = totalCorrect + 1;
+function Military() {
+    let Military = prompt('Did I join the military right out of highschool? Yes or No?').toLowerCase();
+    if (Military === 'yes' || Military === 'y') {
+        // console.log('your answered correctly!');
+        alert('your answered correctly!');
+        totalCorrect = totalCorrect + 1;
+    }
+    else {
+        // console.log('sorry, that\'s incorrect.');
+        alert('sorry, that\'s incorrect.');
+    }
 }
-else {
-    // console.log('sorry, that\'s incorrect.');
-    alert('sorry, that\'s incorrect.');
-}
 
+
+
+Military();
 
 let Kids = prompt('Do I have 2 kids? Yes or No?').toLowerCase();
 
@@ -126,7 +129,7 @@ for (let k = (guessesRemaining - 1); k > 0; k--) {
         break;
     }
     PlacesGuessed = prompt('You have not guessed one of Israel top 10 correctly.  Please try again.');
-
+}
 
 
     alert("The possible answers were: " + allAnswers);
