@@ -72,21 +72,21 @@ alert('Let\'s play a guessing game.  You will get four (6) chances to guess a ra
 
 
 numberGuessed = prompt('Please enter your guess for the random generated number.');
-
-while (parseInt(numberGuessed) !== correctAnswer && (numberOfGuesses - 1) > 0) {
-    numberOfGuesses--;
-    if (parseInt(numberGuessed) < correctAnswer) {
-        numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is higher.  Please guess again.');
-    }
-    else if (parseInt(numberGuessed) > correctAnswer) {
-        numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is lower.  Please guess again.');
-    }
-    else {
-        numberGuessed = prompt('You have not entered a valid number.  Please guess again.');
+function game(){
+    while (parseInt(numberGuessed) !== correctAnswer && (numberOfGuesses - 1) > 0) {
+        numberOfGuesses--;
+        if (parseInt(numberGuessed) < correctAnswer) {
+            numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is higher.  Please guess again.');
+        }
+        else if (parseInt(numberGuessed) > correctAnswer) {
+            numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is lower.  Please guess again.');
+        }
+        else {
+            numberGuessed = prompt('You have not entered a valid number.  Please guess again.');
+        }
     }
 }
-
-
+game();
 
 if (parseInt(numberGuessed) === correctAnswer) {
     alert('You have guessed the computer generated number!');
