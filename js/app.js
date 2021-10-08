@@ -6,58 +6,64 @@ let userName = prompt('Please enter your first name.');
 
 alert(userName + ', you will now be asking you some questions now.');
 
-
-let Military = prompt('Did I join the military right out of highschool? Yes or No?').toLowerCase();
-
-if (Military === 'yes' || Military === 'y') {
-    // console.log('your answered correctly!');
-    alert('your answered correctly!');
-    totalCorrect = totalCorrect + 1;
-}
-else {
-    // console.log('sorry, that\'s incorrect.');
-    alert('sorry, that\'s incorrect.');
-}
-
-
-let Kids = prompt('Do I have 2 kids? Yes or No?').toLowerCase();
-
-if (Kids === 'yes' || Kids === 'y') {
-    // console.log('your answered correctly!');
-    alert('your answered correctly!');
-    totalCorrect = totalCorrect + 1;
-}
-else {
-    // console.log('sorry, that\'s incorrect.');
-    alert('sorry, that\'s incorrect.');
+function Military() {
+    let Military = prompt('Did I join the military right out of highschool? Yes or No?').toLowerCase();
+    if (Military === 'yes' || Military === 'y') {
+        // console.log('your answered correctly!');
+        alert('your answered correctly!');
+        totalCorrect = totalCorrect + 1;
+    }
+    else {
+        // console.log('sorry, that\'s incorrect.');
+        alert('sorry, that\'s incorrect.');
+    }
 }
 
 
-let Location = prompt('Did I live in Upstate Ny? Yes or No?').toLowerCase();
 
-if (Location === 'yes' || Location === 'y') {
-    // console.log('your answered correctly!');
-    alert('your answered correctly!');
-    totalCorrect = totalCorrect + 1;
+Military();
+function Kids() {
+    let Kids = prompt('Do I have 2 kids? Yes or No?').toLowerCase();
+
+    if (Kids === 'yes' || Kids === 'y') {
+        // console.log('your answered correctly!');
+        alert('your answered correctly!');
+        totalCorrect = totalCorrect + 1;
+    }
+    else {
+        // console.log('sorry, that\'s incorrect.');
+        alert('sorry, that\'s incorrect.');
+    }
 }
-else {
-    // console.log('sorry, that\'s incorrect.');
-    alert('sorry, that\'s incorrect.');
+Kids();
+function Location(){
+    let Location = prompt('Did I live in Upstate Ny? Yes or No?').toLowerCase();
+
+    if (Location === 'yes' || Location === 'y') {
+        // console.log('your answered correctly!');
+        alert('your answered correctly!');
+        totalCorrect = totalCorrect + 1;
+    }
+    else {
+        // console.log('sorry, that\'s incorrect.');
+        alert('sorry, that\'s incorrect.');
+    }
 }
+Location();
+function Job(){
+    let Job = prompt('Did I lose my Job due to Covid 19? Yes or No?').toLowerCase();
 
-
-let Job = prompt('Did I lose my Job due to Covid 19? Yes or No?').toLowerCase();
-
-if (Job === 'yes' || Job === 'y') {
-    // console.log('your answered correctly!');
-    alert('your answered correctly!');
-    totalCorrect = totalCorrect + 1;
+    if (Job === 'yes' || Job === 'y') {
+        // console.log('your answered correctly!');
+        alert('your answered correctly!');
+        totalCorrect = totalCorrect + 1;
+    }
+    else {
+        // console.log('sorry, that\'s incorrect.');
+        alert('sorry, that\'s incorrect.');
+    }
 }
-else {
-    // console.log('sorry, that\'s incorrect.');
-    alert('sorry, that\'s incorrect.');
-}
-
+Job();
 
 let numberGuessed = 0;
 let numberOfGuesses = 6;
@@ -66,21 +72,21 @@ alert('Let\'s play a guessing game.  You will get four (6) chances to guess a ra
 
 
 numberGuessed = prompt('Please enter your guess for the random generated number.');
-
-while (parseInt(numberGuessed) !== correctAnswer && (numberOfGuesses - 1) > 0) {
-    numberOfGuesses--;
-    if (parseInt(numberGuessed) < correctAnswer) {
-        numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is higher.  Please guess again.');
-    }
-    else if (parseInt(numberGuessed) > correctAnswer) {
-        numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is lower.  Please guess again.');
-    }
-    else {
-        numberGuessed = prompt('You have not entered a valid number.  Please guess again.');
+function game(){
+    while (parseInt(numberGuessed) !== correctAnswer && (numberOfGuesses - 1) > 0) {
+        numberOfGuesses--;
+        if (parseInt(numberGuessed) < correctAnswer) {
+            numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is higher.  Please guess again.');
+        }
+        else if (parseInt(numberGuessed) > correctAnswer) {
+            numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is lower.  Please guess again.');
+        }
+        else {
+            numberGuessed = prompt('You have not entered a valid number.  Please guess again.');
+        }
     }
 }
-
-
+game();
 
 if (parseInt(numberGuessed) === correctAnswer) {
     alert('You have guessed the computer generated number!');
@@ -109,24 +115,26 @@ alert('Let\'s play a new game.  Try to guess one of my Top 10 places I have been
 
 
 PlacesGuessed = prompt('Please enter Location that you think are in his top 10.');
-
-for (let k = (guessesRemaining - 1); k > 0; k--) {
-    for (let i = 0; i < PlacesOfTravel.length; i++) {
-        if (PlacesGuessed.toLowerCase() === PlacesOfTravel[i]) {
-            alert('You have guessed one of Israel top 10 correctly!');
-            answeredCorrectly = 'yes';
-            totalCorrect = totalCorrect + 1;
+function travelgame(){
+    for (let k = (guessesRemaining - 1); k > 0; k--) {
+        for (let i = 0; i < PlacesOfTravel.length; i++) {
+            if (PlacesGuessed.toLowerCase() === PlacesOfTravel[i]) {
+                alert('You have guessed one of Israel top 10 correctly!');
+                answeredCorrectly = 'yes';
+                totalCorrect = totalCorrect + 1;
+                break;
+            }
+            else {
+                console.log(PlacesGuessed);
+            }
+        }
+        if (answeredCorrectly === 'Yes') {
             break;
         }
-        else {
-            console.log(PlacesGuessed);
-        }
     }
-    if (answeredCorrectly === 'Yes') {
-        break;
-    }
-    PlacesGuessed = prompt('You have not guessed one of Israel top 10 correctly.  Please try again.');
 
+PlacesGuessed = prompt('You have not guessed one of Israel top 10 correctly.  Please try again.');
+} travelgame();
 
 
     alert("The possible answers were: " + allAnswers);
