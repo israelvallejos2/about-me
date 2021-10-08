@@ -36,18 +36,19 @@ function Kids() {
     }
 }
 Kids();
-let Location = prompt('Did I live in Upstate Ny? Yes or No?').toLowerCase();
+function Location(){
+    let Location = prompt('Did I live in Upstate Ny? Yes or No?').toLowerCase();
 
-if (Location === 'yes' || Location === 'y') {
-    // console.log('your answered correctly!');
-    alert('your answered correctly!');
-    totalCorrect = totalCorrect + 1;
+    if (Location === 'yes' || Location === 'y') {
+        // console.log('your answered correctly!');
+        alert('your answered correctly!');
+        totalCorrect = totalCorrect + 1;
+    }
+    else {
+        // console.log('sorry, that\'s incorrect.');
+        alert('sorry, that\'s incorrect.');
+    }
 }
-else {
-    // console.log('sorry, that\'s incorrect.');
-    alert('sorry, that\'s incorrect.');
-}
-
 
 let Job = prompt('Did I lose my Job due to Covid 19? Yes or No?').toLowerCase();
 
