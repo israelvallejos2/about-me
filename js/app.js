@@ -50,19 +50,20 @@ function Location(){
     }
 }
 Location();
+function Job(){
+    let Job = prompt('Did I lose my Job due to Covid 19? Yes or No?').toLowerCase();
 
-let Job = prompt('Did I lose my Job due to Covid 19? Yes or No?').toLowerCase();
-
-if (Job === 'yes' || Job === 'y') {
-    // console.log('your answered correctly!');
-    alert('your answered correctly!');
-    totalCorrect = totalCorrect + 1;
+    if (Job === 'yes' || Job === 'y') {
+        // console.log('your answered correctly!');
+        alert('your answered correctly!');
+        totalCorrect = totalCorrect + 1;
+    }
+    else {
+        // console.log('sorry, that\'s incorrect.');
+        alert('sorry, that\'s incorrect.');
+    }
 }
-else {
-    // console.log('sorry, that\'s incorrect.');
-    alert('sorry, that\'s incorrect.');
-}
-
+Job();
 
 let numberGuessed = 0;
 let numberOfGuesses = 6;
