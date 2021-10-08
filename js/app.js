@@ -115,24 +115,26 @@ alert('Let\'s play a new game.  Try to guess one of my Top 10 places I have been
 
 
 PlacesGuessed = prompt('Please enter Location that you think are in his top 10.');
-
-for (let k = (guessesRemaining - 1); k > 0; k--) {
-    for (let i = 0; i < PlacesOfTravel.length; i++) {
-        if (PlacesGuessed.toLowerCase() === PlacesOfTravel[i]) {
-            alert('You have guessed one of Israel top 10 correctly!');
-            answeredCorrectly = 'yes';
-            totalCorrect = totalCorrect + 1;
+function travelgame(){
+    for (let k = (guessesRemaining - 1); k > 0; k--) {
+        for (let i = 0; i < PlacesOfTravel.length; i++) {
+            if (PlacesGuessed.toLowerCase() === PlacesOfTravel[i]) {
+                alert('You have guessed one of Israel top 10 correctly!');
+                answeredCorrectly = 'yes';
+                totalCorrect = totalCorrect + 1;
+                break;
+            }
+            else {
+                console.log(PlacesGuessed);
+            }
+        }
+        if (answeredCorrectly === 'Yes') {
             break;
         }
-        else {
-            console.log(PlacesGuessed);
-        }
     }
-    if (answeredCorrectly === 'Yes') {
-        break;
-    }
-    PlacesGuessed = prompt('You have not guessed one of Israel top 10 correctly.  Please try again.');
-}
+
+PlacesGuessed = prompt('You have not guessed one of Israel top 10 correctly.  Please try again.');
+} travelgame();
 
 
     alert("The possible answers were: " + allAnswers);
